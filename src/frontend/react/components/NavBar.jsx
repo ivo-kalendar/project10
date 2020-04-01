@@ -1,28 +1,28 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
-class NavBar extends Component {
-	static defaultProps = {
-		title: ["Home", "Messages", "Friends"],
-		icon: ["fas fa-home", "fas fa-envelope-open", "fas fa-users"]
-	}
+const NavBar = ({ title, icon }) => {
+	return (
+		<nav className="navbar">
+			{title.map((el,i) => {
+				return (
+					<a href="/home" key={`elementkey${i}`}>
+						<h1><i className={icon[i]}></i> {el}</h1>
+					</a>
+				)
+			})}	
+		</nav>
+	)
+}
 
-	static propTypes = {
-		title: PropTypes.array.isRequired,
-		icon: PropTypes.array.isRequired
-	}
+NavBar.defaultProps = {
+	title: ["Home", "Messages", "Friends"],
+	icon: ["fas fa-home", "fas fa-envelope-open", "fas fa-users"]
+}
 
-	
-
-	render() {
-		return (
-			<nav className="navbar">
-				<a href="/home"><h1><i className={this.props.icon[0]}></i> {this.props.title[0]}</h1></a>
-				<a href="/home"><h1><i className={this.props.icon[1]}></i> {this.props.title[1]}</h1></a>
-				<a href="/home"><h1><i className={this.props.icon[2]}></i> {this.props.title[2]}</h1></a>
-			</nav>
-		)
-	}
+NavBar.propTypes = {
+	title: PropTypes.array.isRequired,
+	icon: PropTypes.array.isRequired
 }
 
 export default NavBar
