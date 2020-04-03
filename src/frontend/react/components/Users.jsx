@@ -29,9 +29,7 @@ class Users extends React.Component {
 		return (
 			<div className="row justify-content-around items">
 				{this.state.users.map(user => {
-					return (
-						<UserItem  key={user.id} item={user} />
-					)
+					return <UserItem key={user.id} item={user} />
 				})}
 			</div>
 		)

@@ -6,7 +6,7 @@ const UserItem = ({ item: { id, avatar_url, login, html_url } }) => {
 		<div className="col item">
 			<img 
 				src={avatar_url} 
-				alt="" 
+				alt={`GitHub User ${login}`} 
 				className="round"
 				style={{ width: "120px", margin: "1rem" }}
 			/>
@@ -24,6 +24,6 @@ const UserItem = ({ item: { id, avatar_url, login, html_url } }) => {
 	)
 }
 
-UserItem.PropTypes = { item: PropTypes.object.isRequired }
+UserItem.propTypes = { item: PropTypes.object.isRequired }
 
 export default UserItem
