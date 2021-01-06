@@ -22,7 +22,7 @@
   "homepage": "https://github.com/ivo-kalendar/project10#readme",
   "dependencies": {
     "autoprefixer": "^9.7.4",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "babel-plugin-transform-runtime": "^6.23.0",
     "core-js": "^3.6.4",
     "dotenv": "^8.2.0",
